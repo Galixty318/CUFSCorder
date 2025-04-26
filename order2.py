@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
 
-# Clear fields flag logic (runs BEFORE widgets)
+# clear fields flag logic before widgets
 if st.session_state.get("clear_fields_flag", False):
     st.session_state["names_input"] = ""
     st.session_state["order_input"] = ""
     st.session_state["clear_fields_flag"] = False
 
-# Session state for persistent data across reruns
+# Session state for persistent data across 
 if "data" not in st.session_state:
     st.session_state.data = {}
     st.session_state.display_names = {}
@@ -48,12 +48,12 @@ with st.form("order_form"):
                     st.session_state.data[name] = split_cost
             st.session_state.groups.append(names)
 
-# ---- CLEAR FIELDS BUTTON (OUTSIDE FORM) ----
+# clear fields button outside main form
 if st.button("Clear Fields"):
     st.session_state["clear_fields_flag"] = True
     st.experimental_rerun() if hasattr(st, "experimental_rerun") else st.rerun()
 
-# Build table
+# tabling
 already_displayed = set()
 table_rows = []
 for group in st.session_state.groups:
