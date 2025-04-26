@@ -18,7 +18,7 @@ st.title("Order Splitter")
 
 with st.form("order_form"):
     names_input = st.text_input("Enter name(s) (comma-separated):", key="names_input")
-    order_input = st.text_input("Enter order (dish price, e.g. 'squash 12.99, gingersushi 4.99'):", key="order_input")
+    order_input = st.text_input("Enter order (dish price, e.g. 'squash 12.99, round salad 4.99'):", key="order_input")
     submitted = st.form_submit_button("Add Order")
     
     if submitted and names_input and order_input:
